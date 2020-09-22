@@ -1,4 +1,4 @@
-package com.company;
+package Spil;
 
 public class Spil {
 
