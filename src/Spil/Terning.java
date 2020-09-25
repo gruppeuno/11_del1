@@ -10,7 +10,6 @@ public class Terning {
     public Terning (int vaerdi) {
         tVaerdi = vaerdi;
     }
-
     public void kast () {
         Random tilf = new Random();
         tVaerdi = tilf.nextInt(MAKS)+1;
@@ -20,5 +19,9 @@ public class Terning {
     }
     public int getTVaerdi() {
         return tVaerdi;
+    }
+    public String toString(){
+        String resultat = Integer.toString(tVaerdi);
+        return resultat;
     }
 }
