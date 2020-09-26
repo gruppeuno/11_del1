@@ -31,8 +31,10 @@ public class Spil {
             point1 = kastText(t1, t2, scan, spiller1, point1);
 
 
+
             //Spillet for spiller2
             point2 = kastText(t1, t2, scan, spiller2, point2);
+
 
 
         }
@@ -65,11 +67,20 @@ public class Spil {
         if (kast1 == 1 && kast2 == 1) {
             kast1 = 0; kast2 = 0; point = 0;
         }
-        if (kast1 == kast2) {}
+        else if (point > 40 && kast1 == 6 && kast2 == 6) {
+            System.out.println("Tilykke!" + spiller + " har vundet spillet!");
+
+            System.exit(0);
+        }
 
         point = kast1 + kast2 + point;
 
         System.out.println(spiller + " har nu: "+ point);
+
+        if (kast1 == kast2) {
+            System.out.println(spiller + " har slået dobbelt. Du får en ekstra tur!");
+            point = kastText(t1, t2, scan, spiller, point);
+        }
 
         return point;
     }
