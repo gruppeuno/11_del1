@@ -6,6 +6,7 @@ public class Spil {
 
     public static void main(String[] args) {
 
+
         //Terning objekt bliver lavet for t1 og t2
         Terning t1 = new Terning(1);
         Terning t2 = new Terning(2);
@@ -22,36 +23,54 @@ public class Spil {
             spiller2 = scan.nextLine();
         }
 
-        int point1, point2;
+        int point1 = 0, point2 = 0;
 
         while (true) {
 
-            System.out.println(spiller1 + " kast terningen!");
-
-            String tKast;
-
-            do {
-                System.out.println("Brug kommandoen \"kast\"");
-
-                tKast = scan.nextLine();
-            }
-            while (!tKast.toLowerCase().equals("kast"));
+            //Spillet for spiller1
+            point1 = kastText(t1, t2, scan, spiller1, point1);
 
 
-            t1.kast(); t2.kast();
-
-            //Omdanner Terning class output til int
-            int kast1 = Integer.parseInt(String.valueOf(t1));
-            int kast2 = Integer.parseInt(String.valueOf(t2));
-
-            System.out.println(kast1);
-            System.out.println(kast2);
-
-            point1 = kast1 + kast2;
-
-            System.out.println(point1);
+            //Spillet for spiller2
+            point2 = kastText(t1, t2, scan, spiller2, point2);
 
 
         }
+    }
+
+    private static int kastText(Terning t1, Terning t2, Scanner scan, String spiller, int point) {
+
+        System.out.println(spiller + " kast terningen!");
+
+        String tKast;
+
+        do {
+            System.out.println("Brug kommandoen \"kast\"");
+
+            tKast = scan.nextLine();
+        }
+        while (!tKast.toLowerCase().equals("kast"));
+
+        //Kaster terningerne
+        t1.kast();
+        t2.kast();
+
+        //Laver terningerne om til int.
+        int kast1 = Integer.parseInt(String.valueOf(t1));
+        int kast2 = Integer.parseInt(String.valueOf(t2));
+
+        System.out.println(kast1);
+        System.out.println(kast2);
+
+        if (kast1 == 1 && kast2 == 1) {
+            kast1 = 0; kast2 = 0; point = 0;
+        }
+        if (kast1 == kast2) {}
+
+        point = kast1 + kast2 + point;
+
+        System.out.println(spiller + " har nu: "+ point);
+
+        return point;
     }
 }
