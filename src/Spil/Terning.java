@@ -14,12 +14,6 @@ public class Terning {
         Random tilf = new Random();
         tVaerdi = tilf.nextInt(MAKS)+1;
     }
-    public void setTVaerdi(int vaerdi) {
-        tVaerdi = vaerdi;
-    }
-    public int getTVaerdi() {
-        return tVaerdi;
-    }
     public String toString(){
         String resultat = Integer.toString(tVaerdi);
         return resultat;
