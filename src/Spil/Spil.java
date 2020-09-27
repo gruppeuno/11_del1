@@ -12,6 +12,7 @@ public class Spil {
 
         Scanner scan = new Scanner(System.in);
 
+        //Opretter spiller1 og spiller2.
         System.out.println("Vælg navn: Spiller 1");
         String spiller1 = scan.nextLine();
         System.out.println("Vælg navn: Spiller 2");
@@ -29,11 +30,14 @@ public class Spil {
             //Spillet for spiller1
             point1 = kastText(t1, t2, scan, spiller1, point1);
 
+            if (point1 == -1) {break;}
+
             //Spillet for spiller2
             point2 = kastText(t1, t2, scan, spiller2, point2);
+
+            if (point2 == -1) {break;}
         }
     }
-
     private static int kastText(Terning t1, Terning t2, Scanner scan, String spiller, int point) {
 
         System.out.println(spiller + " kast terningen!");
@@ -62,7 +66,7 @@ public class Spil {
         if (point > 40 && kast1 == kast2) {
             System.out.println("Tilykke! " + spiller + " har vundet spillet!");
 
-            System.exit(0);
+            return -1;
         }
         //Checker om der er slået to 1 taller.
         else if (kast1 == 1 && kast2 == 1) {
