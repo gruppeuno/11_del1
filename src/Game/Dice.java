@@ -10,7 +10,7 @@ public class Dice {
         tVaerdi = vaerdi;
     }
 
-    public void kast () {
+    public void roll() {
         final int MAKS = 6;
         Random tilf = new Random();
         tVaerdi = tilf.nextInt(MAKS)+1;
