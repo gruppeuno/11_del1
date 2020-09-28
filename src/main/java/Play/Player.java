@@ -18,8 +18,8 @@ public class Player {
         return points;
     }
 
-    public int plusPoints () {
-        return die1.getFaceValue()+die2.getFaceValue();
+    public int getNewPoints () {
+        return points += die1.getFaceValue()+die2.getFaceValue();
     }
 
     public int losePoints () {

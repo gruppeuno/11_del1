@@ -11,8 +11,9 @@ public class Dice {
         return faceValue;
     }
 
-    public void rollDice(){
+    public void shakeRaffle(){
         faceValue = (int)(Math.random()*6)+1;
+        System.out.println(faceValue);
     }
 
 

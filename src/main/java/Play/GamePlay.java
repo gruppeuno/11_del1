@@ -5,6 +5,7 @@ public class GamePlay {
     Dice die1;
     Dice die2;
 
+
     public GamePlay(int p, Dice d1, Dice d2){
         points = p;
         die1 = d1;

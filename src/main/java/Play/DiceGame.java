@@ -16,6 +16,7 @@ public class DiceGame {
         Player p1 = new Player(0, "Pontus", die1, die2);
         Player p2 = new Player(0, "Halfdan", die1, die2);
 
+        //class for game play rules
         GamePlay g = new GamePlay(0, die1, die2);
 
         //GUI
@@ -25,65 +26,56 @@ public class DiceGame {
         GUI gui = new GUI(fields,Color.PINK);
 
 
-        Scanner rafle = new Scanner(System.in);
-        System.out.println("SHAKE RAFFLE CUP \nby typing >>roll<<");
+        Scanner raffle = new Scanner(System.in);
+        System.out.println("SHAKE RAFFLE CUP \nby typing >>shake<<");
         System.out.println("\nShake it " + p1.playerName + ";)");
 
         //x = 1 as player 1 begins
         int x = 1;
         //the loop continues indefinitely atm
         while (p1.points < 40 && p2.points < 40) {
-            String s = rafle.nextLine();
+            String s = raffle.nextLine();
             switch (x) {
                 case 1:
                     //player one shakes the raffle cup and rolls the dices, if he/she/they types roll ;)
-                    if (s.equalsIgnoreCase("roll")) {
-                        die1.rollDice();
-                        die2.rollDice();
+                    if (s.equalsIgnoreCase("shake")) {
+                        die1.shakeRaffle();
+                        die2.shakeRaffle();
 
-                        //the dices' face values are printed to the console
-                        System.out.println(die1.getFaceValue());
-                        System.out.println(die2.getFaceValue());
                         gui.setDice(die1.getFaceValue(), die2.getFaceValue());
 
                         //extra turn if player 1 gets doubles
                         if (g.isDiceValueSame()) {
-                            p1.points += p1.plusPoints();
+                            p1.getNewPoints();
                             x = 1;
                             if (g.isSnakeEyes()) {
                                 p1.losePoints();
                                 //x++ as it now is player 2's turn
                                 x++;
-
                             }
-
                             System.out.println(p1.playerName + ":" + p1.points);
                         } else {
                             //player 1's points are calculated on behalf of the sum of the face value of the dices
-                            p1.points += p1.plusPoints();
+                            p1.getNewPoints();
                             System.out.println(p1.playerName + ":" + p1.points);
                             //x++ as it now is player 2's turn
                             x++;
                         }
-
                         break;
-
                     } else {
                         System.out.println(":( plz");
                     }
                 case 2:
 
                     //player one rolls the dices, if he/she/they types roll ;)
-                    if (s.equalsIgnoreCase("roll")) {
-                        die1.rollDice();
-                        die2.rollDice();
+                    if (s.equalsIgnoreCase("shake")) {
+                        die1.shakeRaffle();
+                        die2.shakeRaffle();
 
-                        System.out.println(die1.getFaceValue());
-                        System.out.println(die2.getFaceValue());
                         gui.setDice(die1.getFaceValue(), die2.getFaceValue());
 
                         if (g.isDiceValueSame()) {
-                            p2.points += p2.plusPoints();
+                            p2.getNewPoints();
                             x = 2;
                             if (g.isSnakeEyes()) {
                                 p2.losePoints();
@@ -94,19 +86,15 @@ public class DiceGame {
                         } else {
 
                             //player 2's points
-                            p2.points += p2.plusPoints();
+                            p2.getNewPoints();
                             System.out.println(p2.playerName + ":" + p2.points);
                             //x-- as it now is player 1's turn
                             x--;
                         }
-
-
                     } else {
                         System.out.println(":( plz");
                     }
             }
-
-
         }
         if (p1.points > 40) {
             System.out.println("TILLYKKE " + p1.playerName);
