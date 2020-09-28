@@ -8,14 +8,14 @@ public class GameEN {
 
         System.out.println(player + " kast terningen!");
 
-        String dRoll;
+        String diceRoll;
 
         do {
             System.out.println("Brug kommandoen \"Roll\"");
 
-            dRoll = scan.nextLine();
+            diceRoll = scan.nextLine();
         }
-        while (!dRoll.toLowerCase().equals("roll"));
+        while (!diceRoll.toLowerCase().equals("roll"));
 
         //Kaster terningerne
         t1.roll();
@@ -27,6 +27,7 @@ public class GameEN {
 
         System.out.println(roll1);
         System.out.println(roll2);
+        System.out.println("Terningsum i alt for tur: " + roll1 + roll2);
 
         //Tjekker om spilleren har vundet
         if (point > 40 && roll1 == roll2) {
