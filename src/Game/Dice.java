@@ -1,12 +1,12 @@
-package Spil;
+package Game;
 
 import java.util.Random;
 
-public class Terning {
+public class Dice {
 
     private int tVaerdi;
 
-    public Terning (int vaerdi) {
+    public Dice(int vaerdi) {
         tVaerdi = vaerdi;
     }
 

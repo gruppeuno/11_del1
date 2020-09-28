@@ -1,14 +1,14 @@
-package Spil;
+package Game;
 
 import java.util.Scanner;
 
-public class Spil {
+public class Game {
 
     public static void main(String[] args) {
 
         //Terning objekt bliver lavet for t1 og t2
-        Terning t1 = new Terning(1);
-        Terning t2 = new Terning(2);
+        Dice t1 = new Dice(1);
+        Dice t2 = new Dice(2);
 
         Scanner scan = new Scanner(System.in);
 
@@ -38,7 +38,7 @@ public class Spil {
             if (point2 == -1) {break;}
         }
     }
-    private static int kastText(Terning t1, Terning t2, Scanner scan, String spiller, int point) {
+    private static int kastText(Dice t1, Dice t2, Scanner scan, String spiller, int point) {
 
         System.out.println(spiller + " kast terningen!");
 
