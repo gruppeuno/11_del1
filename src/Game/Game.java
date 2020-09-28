@@ -9,8 +9,6 @@ public class Game {
         //Terning objekt bliver lavet for t1 og t2
         Dice t1 = new Dice(1);
         Dice t2 = new Dice(2);
-        GameEN r1 = new GameEN();
-        GameEN r2 = new GameEN();
 
         Scanner scan = new Scanner(System.in);
 
@@ -30,12 +28,12 @@ public class Game {
         while (true) {
 
             //Spillet for spiller1
-            point1 = r1.rollText(t1, t2, scan, player1, point1);
+            point1 = GameEN.rollText(t1, t2, player1, point1);
 
             if (point1 == -1) {break;}
 
             //Spillet for spiller2
-            point2 = r2.rollText(t1, t2, scan, player2, point2);
+            point2 = GameEN.rollText(t1, t2, player2, point2);
 
             if (point2 == -1) {break;}
         }

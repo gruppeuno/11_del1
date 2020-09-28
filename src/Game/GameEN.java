@@ -4,16 +4,18 @@ import java.util.Scanner;
 
 public class GameEN {
 
-    public static int rollText(Dice t1, Dice t2, Scanner scan, String player, int point) {
+    public static int rollText(Dice t1, Dice t2, String player, int point) {
 
-        System.out.println(player + " kast terningen!");
+        Scanner scanRoll = new Scanner(System.in);
+
+        System.out.println(player + " roll the dice!");
 
         String diceRoll;
 
         do {
-            System.out.println("Brug kommandoen \"Roll\"");
+            System.out.println("Use the command \"Roll\"");
 
-            diceRoll = scan.nextLine();
+            diceRoll = scanRoll.nextLine();
         }
         while (!diceRoll.toLowerCase().equals("roll"));
 
@@ -49,7 +51,7 @@ public class GameEN {
         //Tjekker om der skal slåes igen.
         if (roll1 == roll2) {
             System.out.println(player + " har slået dobbelt. Du får en ekstra tur!");
-            point = rollText(t1, t2, scan, player, point);
+            point = rollText(t1, t2, player, point);
         }
 
         return point;
