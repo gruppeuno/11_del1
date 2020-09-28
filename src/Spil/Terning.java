@@ -3,6 +3,7 @@ package Spil;
 import java.util.Random;
 
 public class Terning {
+
     private final int MAKS = 6;
 
     private int tVaerdi;
@@ -10,6 +11,7 @@ public class Terning {
     public Terning (int vaerdi) {
         tVaerdi = vaerdi;
     }
+
     public void kast () {
         Random tilf = new Random();
         tVaerdi = tilf.nextInt(MAKS)+1;

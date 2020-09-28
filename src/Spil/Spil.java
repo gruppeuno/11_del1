@@ -75,7 +75,7 @@ public class Spil {
 
         point = kast1 + kast2 + point;
 
-        System.out.println(spiller + " har nu: "+ point);
+        System.out.println(spiller + " har nu: " + point);
 
         //Tjekker om der skal slåes igen.
         if (kast1 == kast2) {
