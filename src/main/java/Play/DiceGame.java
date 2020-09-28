@@ -25,7 +25,6 @@ public class DiceGame {
         GUI gui = new GUI(fields,Color.PINK);
 
 
-
         Scanner rafle = new Scanner(System.in);
         System.out.println("SHAKE RAFFLE CUP \nby typing >>roll<<");
         System.out.println("\nShake it " + p1.playerName + ";)");
@@ -48,7 +47,7 @@ public class DiceGame {
                         gui.setDice(die1.getFaceValue(), die2.getFaceValue());
 
                         //extra turn if player 1 gets doubles
-                        if (die1.getFaceValue() == die2.getFaceValue()) {
+                        if (g.isDiceValueSame()) {
                             p1.points += p1.plusPoints();
                             x = 1;
                             if (g.isSnakeEyes()) {
@@ -83,7 +82,7 @@ public class DiceGame {
                         System.out.println(die2.getFaceValue());
                         gui.setDice(die1.getFaceValue(), die2.getFaceValue());
 
-                        if (die1.getFaceValue() == die2.getFaceValue()) {
+                        if (g.isDiceValueSame()) {
                             p2.points += p2.plusPoints();
                             x = 2;
                             if (g.isSnakeEyes()) {

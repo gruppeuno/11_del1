@@ -18,4 +18,11 @@ public class GamePlay {
         return false;
     }
 
+    public boolean isDiceValueSame(){
+        if (die1.getFaceValue() == die2.getFaceValue()) {
+            return true;
+        }
+        return false;
+    }
+
 }
