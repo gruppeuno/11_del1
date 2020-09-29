@@ -6,8 +6,8 @@ public class GameRules {
 
     final static int MAX = 40;
 
-    public static void main(int die1, int die2, Player p) {
-        Scanner scan = new Scanner(System.in);
+    public void Game(int die1, int die2, Player p) {
+        System.out.println(p.getPlayerName() + " slog " + die1 +" og " + die2);
 
         if (p.getPoints() > MAX) {
             p.setPlayerPendingWin(true);

@@ -18,10 +18,6 @@ public class RaffleCup {
         setTotalValue();
     }
 
-    public boolean get2Ens() {
-        return die1==die2;
-    }
-
     public int getDie1(){
         return die1;
     }
