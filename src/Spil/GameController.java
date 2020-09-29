@@ -6,6 +6,7 @@ public class GameController {
 
     private boolean winner = false;
     private int turnCount = 0;
+    private String diceRoll;
     private GameTurn newGame = new GameTurn();
     private Player player1 = new Player();
     private Player player2 = new Player();
@@ -15,15 +16,16 @@ public class GameController {
 
     public void gameController(){
 
+        //**************lav scanner til de her fistere****************
         player1.setPlayerName("gab");
         player2.setPlayerName("Dennis");
 
         while (playerArray[turnCount].getPlayerWin()==false){
             do {
 
-                //String diceRoll;
+
                 //do {
-                //    System.out.println(player1.getPlayerName() + " use the command \"Roll\"");
+                //    System.out.println(playerArray[turnCount].getPlayerName() + " use the command \"Roll\"");
 //
                 //    diceRoll = scan.nextLine();
                 //}
