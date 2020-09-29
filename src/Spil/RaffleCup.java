@@ -15,7 +15,6 @@ public class RaffleCup {
     public void roll() {
         die1 =(int)(Math.random() * MAX) + 1;
         die2 =(int)(Math.random() * MAX) + 1;
-        setTotalValue();
     }
 
     public int getDie1(){
@@ -25,13 +24,4 @@ public class RaffleCup {
     public int getDie2(){
         return die2;
     }
-
-    public void setTotalValue(){
-        totalValue= die1 + die2;
-    }
-
-    public int getTotalValue(){
-        return totalValue;
-    }
-
 }

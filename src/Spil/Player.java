@@ -1,7 +1,5 @@
 package Spil;
 
-import java.util.Scanner;
-
 public class Player{
 
     //værdier der skal gemmes og de er private så deres scope er klassen
@@ -9,10 +7,11 @@ public class Player{
     private int points = 0;
     private boolean playerWin = false;
     private boolean playerPendingWin = false;
-    private boolean ekstraSlag = false;
-    private int antalSeksere = 0;
+    private boolean rollAgain = false;
+    //til at tælle om man slog 2x6 sidste tur
+    private int sixes = 0;
 
-    //points
+    //set og get Points
     public void setPoints(int totalValue) {
         this.points=totalValue;
     }
@@ -20,7 +19,7 @@ public class Player{
         return points;
     }
 
-    //Player win
+    //set og get PlayerWin
     public void setPlayerWin(boolean playerWin){
         this.playerWin=true;
     }
@@ -28,7 +27,7 @@ public class Player{
         return playerWin;
     }
 
-    //navn
+    //set og get PlayerNavn
     public void setPlayerName(String name){
         this.playerName = name;
     }
@@ -37,7 +36,7 @@ public class Player{
         return playerName;
     }
 
-    //set vinder pending
+    //set og get  PlayerPlendingWin
     public void setPlayerPendingWin(boolean playerPendingWin){
         this.playerPendingWin=playerPendingWin;
     }
@@ -45,22 +44,22 @@ public class Player{
         return playerPendingWin;
     }
 
-    //ekstra Slag
-    public void setEkstraSlag(boolean ekstraSlag) {
-        this.ekstraSlag = ekstraSlag;
+    //set og get rollAgain
+    public void setRollAgain(boolean rollAgain) {
+        this.rollAgain = rollAgain;
     }
 
-    public boolean getEkstraSlag() {
-        return ekstraSlag;
+    public boolean getRollAgain() {
+        return rollAgain;
     }
 
-
-    public void setAntalSeksere(int antalSeksere) {
-        this.antalSeksere = antalSeksere;
+    //set og get Sixes
+    public void setSixes(int sixes) {
+        this.sixes = sixes;
     }
 
-    public int getAntalSeksere() {
-        return antalSeksere;
+    public int getSixes() {
+        return sixes;
     }
 
 

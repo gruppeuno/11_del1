@@ -32,7 +32,7 @@ public class GameController {
                 cup.roll();
                 newGame.gameTurn(cup.getDie1(),cup.getDie2(), playerArray[turnCount]);
 
-            }while (playerArray[turnCount].getEkstraSlag()!=false);
+            }while (playerArray[turnCount].getRollAgain()!=false);
 
             if (playerArray[turnCount].getPlayerWin()==true){
                 break;
