@@ -2,11 +2,11 @@ package Spil;
 
 import java.util.Scanner;
 
-public class GameRules {
+public class GameTurn {
 
     final static int MAX = 40;
 
-    public void Game(int die1, int die2, Player p) {
+    public void gameTurn(int die1, int die2, Player p) {
         System.out.println(p.getPlayerName() + " slog " + die1 +" og " + die2);
 
         if ((p.getPoints() + die1 + die2)>= MAX) {
