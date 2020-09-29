@@ -38,7 +38,6 @@ public class GameTurn {
                 //sætter antal 2x6 til 1
                 else {
                     p.setAntalSeksere(1);
-                    System.out.println(p.getPlayerName() + " har nu " + p.getPoints() + " points");
                 }
             }
             //slå 2 ens for at vinde, hvis altså du er på 40 points
