@@ -3,6 +3,7 @@ package Spil;
 import java.util.Scanner;
 
 public class RaffleCup {
+
     //Max til at bruge math.random senere
     private final int MAX = 6;
 

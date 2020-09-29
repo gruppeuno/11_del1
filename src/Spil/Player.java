@@ -10,32 +10,57 @@ public class Player{
     private boolean playerWin = false;
     private boolean playerPendingWin = false;
     private boolean ekstraSlag = false;
-    private boolean antalSeksere = 0;
-    private boolean
+    private int antalSeksere = 0;
 
-
-    public void setPoints(int totalValue, boolean setWin) {
-        points+=totalValue;
+    //points
+    public void setPoints(int totalValue) {
+        this.points=totalValue;
     }
-
-    public void setPlayerWin(){
-        playerWin=true;
-    }
-
-    public boolean getPlayerWin(){
-        return playerWin;
-    }
-
     public int getPoints(){
         return points;
     }
 
+    //Player win
+    public void setPlayerWin(boolean playerWin){
+        this.playerWin=true;
+    }
+    public boolean getPlayerWin(){
+        return playerWin;
+    }
+
+    //navn
     public void setPlayerName(String name){
-        playerName = name;
+        this.playerName = name;
     }
 
     public String getPlayerName(){
         return playerName;
+    }
+
+    //set vinder pending
+    public void setPlayerPendingWin(boolean playerPendingWin){
+        this.playerPendingWin=playerPendingWin;
+    }
+    public boolean getPlayerPendingWin(){
+        return playerPendingWin;
+    }
+
+    //ekstra Slag
+    public void setEkstraSlag(boolean ekstraSlag) {
+        this.ekstraSlag = ekstraSlag;
+    }
+
+    public boolean getEkstraSlag() {
+        return ekstraSlag;
+    }
+
+
+    public void setAntalSeksere(int antalSeksere) {
+        this.antalSeksere = antalSeksere;
+    }
+
+    public int getAntalSeksere() {
+        return antalSeksere;
     }
 
 
