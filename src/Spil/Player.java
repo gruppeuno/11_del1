@@ -2,7 +2,7 @@ package Spil;
 
 import java.util.Scanner;
 
-public class Player extends RaffleCup{
+public class Player{
 
     //værdier der skal gemmes og de er private så deres scope er klassen
     private int points = 0;
@@ -11,19 +11,9 @@ public class Player extends RaffleCup{
     private boolean playerWin=false;
 
 
-    public void setPoints(){
-        points+=getTotalValue();
-
-        if (points<MAX){
-        }
-
-        else if (points>=MAX){
-            points=40;
-            setPlayerWin();
-        }
+    public void setPoints(int totalValue) {
+        points+=totalValue;
     }
-
-
 
     public void setPlayerWin(){
         playerWin=true;
@@ -34,7 +24,6 @@ public class Player extends RaffleCup{
     }
 
     public int getPoints(){
-        System.out.println(points);
         return points;
     }
 

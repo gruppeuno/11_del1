@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Game {
 //efefwef
+
     RaffleCup cup = new RaffleCup();
     Player player1 = new Player();
     Player player2 = new Player();
@@ -19,14 +20,19 @@ public class Game {
         player1.setPlayerName(scan.nextLine());
         System.out.println("player 2 skriv dit navn: ");
         player2.setPlayerName(scan.nextLine());
-        scan.close();
         System.out.println("welcommen til spillet");
 
 
-        while(player1.getPlayerWin()!=true && player2.getPlayerWin()!=true){
 
-            dinTurPlayer1();
-            player1.roll();
+
+        while(player1.getPlayerWin()!=true && player2.getPlayerWin()!=true){
+            int totalValue;
+            System.out.println(player1.getPlayerName() + " roll the dice!");
+
+            cup.roll();
+            totalValue = cup.getTotalValue();
+            player1.setPoints(totalValue);
+
 
         }
 
@@ -35,9 +41,14 @@ public class Game {
 
     }
 
-    public void dinTurPlayer1(){
-        System.out.println( "Det er din tur " + player1.getPlayerName() + ", slå med rasslebæreret, skriv slå tryk enter for at slå");
-        String slå = scan.nextLine();
-        scan.close();
+    public void plusPoints(){
+        player1.setPoints(player1.getPoints()+cup.getTotalValue());
+        if (player1.getPoints()<40){
+        }
+
+        else if (player1.getPoints()>=40){
+            player1.setPoints(40);
+            player1.setPlayerWin();
+        }
     }
 }
