@@ -28,13 +28,14 @@ public class Game {
         while(player1.getPlayerWin()!=true && player2.getPlayerWin()!=true){
             int totalValue;
             System.out.println(player1.getPlayerName() + " roll the dice!");
-
             cup.roll();
             totalValue = cup.getTotalValue();
-            player1.setPoints(totalValue);
+            player1.setPoints(totalValue, cup.getWin());
+            plusPoints();
 
 
         }
+        System.out.println("vinder fundet");
 
 
 
@@ -42,12 +43,12 @@ public class Game {
     }
 
     public void plusPoints(){
-        player1.setPoints(player1.getPoints()+cup.getTotalValue());
+        player1.setPoints(player1.getPoints()+cup.getTotalValue(), cup.getWin());
         if (player1.getPoints()<40){
         }
 
         else if (player1.getPoints()>=40){
-            player1.setPoints(40);
+            player1.setPoints(40, cup.getWin());
             player1.setPlayerWin();
         }
     }
