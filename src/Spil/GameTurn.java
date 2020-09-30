@@ -9,7 +9,7 @@ public class GameTurn {
         System.out.println(p.getPlayerName() + " slog " + die1 +" og " + die2);
 
         //set PlayerPendingWin til true, hvis spilleren har +40 points, samt sæt værdien til MAX
-        if ((p.getPoints() + die1 + die2)>= MAX) {
+        if (p.getPoints()>= MAX) {
             p.setPlayerPendingWin(true);
             p.setPoints(MAX);
 
@@ -50,6 +50,7 @@ public class GameTurn {
                 p.setRollAgain(false);
             }
 
+            //set seksere til 0, da spiller ikke slog 6
             else {
                 p.setSixes(0);
                 System.out.println(p.getPlayerName() + " har nu " + p.getPoints() + " points");
