@@ -9,19 +9,13 @@ public class GameTurn {
         System.out.println(p.getPlayerName() + " slog " + die1 +" og " + die2);
 
         //set PlayerPendingWin til true, hvis spilleren har +40 points, samt sæt værdien til MAX
+        //læg ternings siderne til points
         if (p.getPoints()>= MAX) {
             p.setPlayerPendingWin(true);
             p.setPoints(MAX);
-
+        }
         //hvis terningerne giver over 40, da man ikke kan have over 40 points
-        } else if ((p.getPoints() + die1 + die2)>=MAX){
-            p.setPoints(MAX);
-        }
-
-        //læg ternings siderne til points
-        else {
-            p.setPoints(p.getPoints() + die1 + die2);
-        }
+        else p.setPoints(Math.min((p.getPoints() + die1 + die2), MAX));
 
         //hvis 2 ens
         if (die1 == die2) {
@@ -52,7 +46,7 @@ public class GameTurn {
             }
 
             //slå 2 ens for at vinde, hvis altså du er på 40 points
-            if (p.getPlayerPendingWin() == true) {
+            if (p.getPlayerPendingWin()) {
                 p.setPlayerWin(true);
                 System.out.println("Du vandt!");
                 p.setRollAgain(false);
