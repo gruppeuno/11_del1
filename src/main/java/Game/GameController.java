@@ -12,7 +12,7 @@ public class GameController {
     private final GameTurn turn = new GameTurn();
     private final Player player1 = new Player();
     private final Player player2 = new Player();
-    private final Dice cup = new Dice();
+    private final RaffleCup cup = new RaffleCup();
     private final Scanner scan = new Scanner(System.in);
     //array med spillere, bruges sammen med turncount for at skifte spiller
     private final Player[] playerArray = {player1,player2};
