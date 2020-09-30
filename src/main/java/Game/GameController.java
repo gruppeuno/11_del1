@@ -1,11 +1,11 @@
 package Game;
+
 import gui_main.GUI;
 
 import java.util.Scanner;
 
 public class GameController {
     GUI gui = new GUI();
-
     private int turnCount = 0;
 
     //skaber nye objekter af hhv. GameTurn, Player for hver spille, RaffleCup og Scanner
@@ -52,7 +52,6 @@ public class GameController {
                 //ingsætter terningernes værdi og spilleren hvis tur det er, i gameturn
                 //som sørger for at der sker det rigtige ud fra hvad terningerne viser
                 turn.gameTurn(cup.getDie1(),cup.getDie2(), playerArray[turnCount]);
-                //her benyttes GUI til at fremstille terningerne så de viser, hvad spilleren har slået
                 gui.setDice(cup.getDie1(), cup.getDie2());
 
             //køre igennem flere gange hvis man slår dobbelt
