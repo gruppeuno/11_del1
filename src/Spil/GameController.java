@@ -28,12 +28,13 @@ public class GameController {
             do {
 
 
-                //do {
-                //    System.out.println(playerArray[turnCount].getPlayerName() + " use the command \"Roll\"");
-//
-                //    rollInput = scan.nextLine();
-                //}
-                //while (!rollInput.toLowerCase().equals("roll"));
+                //loop til afvente spillerens roll commando i consollen
+                do {
+                    System.out.println("Det er din tur " + playerArray[turnCount].getPlayerName() + "\nSkriv \"Roll\" for slå med terningerne!");
+
+                    rollInput = scan.nextLine();
+                }
+                while (!rollInput.toLowerCase().equals("roll"));
 
                 //ruller terninger med RaffleCup
                 cup.roll();
@@ -53,7 +54,7 @@ public class GameController {
             //giver mulighed for at tilføje flere spillere, turn turnCount+1%playerArray.length
             //giver turen til spiller 1 fra den sidste spiller, eller giver turen videre fra spiller 1 til 2
             turnCount= (turnCount+1)%playerArray.length;
-            System.out.println();
+            System.out.println("========================================");
             System.out.println();
         }
         //lukker scanner

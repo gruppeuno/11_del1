@@ -13,8 +13,13 @@ public class GameTurn {
             p.setPlayerPendingWin(true);
             p.setPoints(MAX);
 
+        //hvis terningerne giver over 40, da man ikke kan have over 40 points
+        } else if ((p.getPoints() + die1 + die2)>=MAX){
+            p.setPoints(MAX);
+        }
+
         //læg ternings siderne til points
-        } else {
+        else {
             p.setPoints(p.getPoints() + die1 + die2);
         }
 
@@ -25,24 +30,27 @@ public class GameTurn {
             p.setRollAgain(true);
 
             //snake eyeees, 2x1 = mister alle points, samt mister pending win hvis man nu var på 40 points
-            if ((die1 == 1 && die2 == 1)) {
+            if (die1 == 1) {
                 p.setPoints(0);
                 p.setPlayerPendingWin(false);
-                System.out.println("du slog to 1'ere og mistede alle dine points... Du må slå igen");
+                System.out.println("SNAKE EYES!!! Du slog to 1'ere og mistede alle dine points... Du må slå igen");
             }
 
             //vinder hvis man slår 2 seksere i streg, uanset om det var samme eller forrige tur
-            if (die1 == 6 && die2 == 6) {
+            if (die1 == 6) {
+
                 //hvis man slog 2x6 sidste tur
                 if (p.getSixes() == 1) {
                     p.setPlayerWin(true);
-                    System.out.println("du slog to 6'ere igen!");
+                    System.out.println("      du slog to 6'ere igen!");
                 }
+
                 //sætter antal 2x6 til 1
                 else {
                     p.setSixes(1);
                 }
             }
+
             //slå 2 ens for at vinde, hvis altså du er på 40 points
             if (p.getPlayerPendingWin() == true) {
                 p.setPlayerWin(true);
@@ -51,12 +59,13 @@ public class GameTurn {
             }
 
             //set seksere til 0, da spiller ikke slog 6
-            else {
+            else if (die1!=6){
                 p.setSixes(0);
                 System.out.println(p.getPlayerName() + " har nu " + p.getPoints() + " points");
             }
         }
 
+        //hvis die1 != die2
         else {
             p.setRollAgain(false);
             p.setSixes(0);
