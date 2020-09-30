@@ -18,10 +18,17 @@ public class GameController {
     public void gameController(){
 
         System.out.println("Player 1 skriv dit navn og tryk enter:");
-        player1.setPlayerName(scan.nextLine());
-        System.out.println();
-        System.out.println("Player 2 skriv dit navn og tryk enter:");
-        player2.setPlayerName(scan.nextLine());
+        String vPlayer1 = scan.nextLine();
+        player1.setPlayerName(vPlayer1);
+        System.out.println("\nPlayer 2 skriv dit navn og tryk enter:");
+        String vPlayer2 = scan.nextLine();
+
+        while (vPlayer1.toLowerCase().equals(vPlayer2.toLowerCase())) {
+            System.out.println("Begge spillere kan ikke have samme nav. Player 2 vælg nyt navn.");
+            vPlayer2 = scan.nextLine();
+        }
+
+        player2.setPlayerName(vPlayer2);
         System.out.println("\nSpillet starter....");
 
         while (!playerArray[turnCount].getPlayerWin()){
