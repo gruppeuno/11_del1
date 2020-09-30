@@ -1,6 +1,6 @@
-package Spil;
+package Game;
 
-public class main {
+public class Game {
 
     //game controller skal være static for at fungere i static main
     //static betyder global scope
