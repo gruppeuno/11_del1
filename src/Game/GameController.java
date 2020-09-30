@@ -5,16 +5,15 @@ import java.util.Scanner;
 public class GameController {
 
     private int turnCount = 0;
-    private String rollInput;
 
     //skaber nye objekter af hhv. GameTurn, Player for hver spille, RaffleCup og Scanner
-    private GameTurn turn = new GameTurn();
-    private Player player1 = new Player();
-    private Player player2 = new Player();
-    private Dice cup = new Dice();
-    private Scanner scan = new Scanner(System.in);
+    private final GameTurn turn = new GameTurn();
+    private final Player player1 = new Player();
+    private final Player player2 = new Player();
+    private final Dice cup = new Dice();
+    private final Scanner scan = new Scanner(System.in);
     //array med spillere, bruges sammen med turncount for at skifte spiller
-    private Player[] playerArray = {player1,player2};
+    private final Player[] playerArray = {player1,player2};
 
     public void gameController(){
 
@@ -25,11 +24,12 @@ public class GameController {
         player2.setPlayerName(scan.nextLine());
         System.out.println("\nSpillet starter....");
 
-        while (playerArray[turnCount].getPlayerWin()==false){
+        while (!playerArray[turnCount].getPlayerWin()){
             do {
 
 
                 //loop til afvente spillerens roll commando i consollen
+                String rollInput;
                 do {
                     System.out.println("Det er din tur " + playerArray[turnCount].getPlayerName() + "\nSkriv \"Roll\" og tryk enter for slå med terningerne!");
 
@@ -45,10 +45,10 @@ public class GameController {
                 turn.gameTurn(cup.getDie1(),cup.getDie2(), playerArray[turnCount]);
 
             //køre igennem flere gange hvis man slår dobbelt
-            }while (playerArray[turnCount].getRollAgain()!=false);
+            }while (playerArray[turnCount].getRollAgain());
 
             //checker om der er fundet en vinder efter turen
-            if (playerArray[turnCount].getPlayerWin()==true){
+            if (playerArray[turnCount].getPlayerWin()){
                 break;
             }
 

@@ -1,14 +1,18 @@
 package Test;
 
+import Game.Dice;
+
 public class Test {
     public static void main(String[] args) {
-        int t = 0;
-        int resultat = 0;
 
-        while(t<1000){
-            resultat+=(int)(Math.random() * 6) + 1;
-            t++;
+        for (int i = 0; i <= 1; i++){
+            Dice test = new Dice();
+            test.roll();
+            test.getDie1();
+            test.getDie2();
+
+            System.out.println(test);
         }
-        System.out.println(resultat);
+
     }
 }
