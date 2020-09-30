@@ -3,7 +3,6 @@ package Spil;
 import java.util.Scanner;
 
 public class RaffleCup {
-    //danni er cjute
 
     //Max til at bruge math.random senere
     private final int MAX = 6;
@@ -11,7 +10,6 @@ public class RaffleCup {
     //værdier der skal gemmes og de er private så deres scope er klassen
     private int die1;
     private int die2;
-    private int totalValue = 0;
 
     public void roll() {
         die1 =(int)(Math.random() * MAX) + 1;

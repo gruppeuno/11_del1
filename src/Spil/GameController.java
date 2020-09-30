@@ -61,6 +61,5 @@ public class GameController {
         }
         //lukker scanner
         scan.close();
-
     }
 }

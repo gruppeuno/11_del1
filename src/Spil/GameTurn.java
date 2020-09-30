@@ -42,7 +42,7 @@ public class GameTurn {
                 //hvis man slog 2x6 sidste tur
                 if (p.getSixes() == 1) {
                     p.setPlayerWin(true);
-                    System.out.println("      du slog to 6'ere igen!");
+                    System.out.println("du slog to 6'ere igen!");
                 }
 
                 //sætter antal 2x6 til 1

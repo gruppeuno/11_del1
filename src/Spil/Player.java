@@ -3,7 +3,7 @@ package Spil;
 public class Player{
 
     //værdier der skal gemmes og de er private så deres scope er klassen
-    private String playerName = "";
+    private String playerName;
     private int points = 0;
     private boolean playerWin = false;
     private boolean playerPendingWin = false;
