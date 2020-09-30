@@ -19,10 +19,12 @@ public class GameController {
 
     public void gameController(){
 
-        //**************lav scanner til de her fistere****************
-        player1.setPlayerName("gab");
-        player2.setPlayerName("Dennis");
-
+        System.out.println("Player 1 skriv dit navn og tryk enter:");
+        player1.setPlayerName(scan.nextLine());
+        System.out.println();
+        System.out.println("Player 2 skriv dit navn og tryk enter:");
+        player2.setPlayerName(scan.nextLine());
+        System.out.println("\nSpillet starter....");
 
         while (playerArray[turnCount].getPlayerWin()==false){
             do {
@@ -30,7 +32,7 @@ public class GameController {
 
                 //loop til afvente spillerens roll commando i consollen
                 do {
-                    System.out.println("Det er din tur " + playerArray[turnCount].getPlayerName() + "\nSkriv \"Roll\" for slå med terningerne!");
+                    System.out.println("Det er din tur " + playerArray[turnCount].getPlayerName() + "\nSkriv \"Roll\" og tryk enter for slå med terningerne!");
 
                     rollInput = scan.nextLine();
                 }
