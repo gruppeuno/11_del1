@@ -1,5 +1,7 @@
 package Game;
 
+import gui_main.GUI;
+
 public class Dice {
 
     //værdier der skal gemmes og de er private så deres scope er klassen
@@ -20,4 +22,6 @@ public class Dice {
     public int getDie2(){
         return die2;
     }
+
+
 }
