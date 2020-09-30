@@ -1,8 +1,6 @@
-package Spil;
+package Game;
 
-import java.util.Scanner;
-
-public class RaffleCup {
+public class Dice {
 
     //Max til at bruge math.random senere
     private final int MAX = 6;

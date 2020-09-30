@@ -1,4 +1,4 @@
-package Spil;
+package Game;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class GameController {
     private GameTurn turn = new GameTurn();
     private Player player1 = new Player();
     private Player player2 = new Player();
-    private RaffleCup cup = new RaffleCup();
+    private Dice cup = new Dice();
     private Scanner scan = new Scanner(System.in);
     //array med spillere, bruges sammen med turncount for at skifte spiller
     private Player[] playerArray = {player1,player2};
