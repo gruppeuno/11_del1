@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class GameController {
 
-    private boolean winner = false;
     private int turnCount = 0;
     private String rollInput;
 
