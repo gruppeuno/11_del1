@@ -1,17 +1,16 @@
 package Test;
 
-import Game.Dice;
+import Game.RaffleCup;
 
 public class Test {
     public static void main(String[] args) {
 
-        for (int i = 0; i <= 1; i++){
-            Dice test = new Dice();
+        for (int i = 0; i <= 1000; i++){
+            RaffleCup test = new RaffleCup();
             test.roll();
-            test.getDie1();
-            test.getDie2();
+            int die1 =test.getDie1();
 
-            System.out.println(test);
+            System.out.println(i + ": " + die1);
         }
 
     }

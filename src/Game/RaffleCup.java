@@ -1,6 +1,6 @@
 package Game;
 
-public class Dice {
+public class RaffleCup {
 
     //værdier der skal gemmes og de er private så deres scope er klassen
     private int die1;

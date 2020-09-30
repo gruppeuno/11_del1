@@ -10,7 +10,7 @@ public class GameController {
     private final GameTurn turn = new GameTurn();
     private final Player player1 = new Player();
     private final Player player2 = new Player();
-    private final Dice cup = new Dice();
+    private final RaffleCup cup = new RaffleCup();
     private final Scanner scan = new Scanner(System.in);
     //array med spillere, bruges sammen med turncount for at skifte spiller
     private final Player[] playerArray = {player1,player2};
@@ -23,6 +23,7 @@ public class GameController {
         System.out.println("\nPlayer 2 skriv dit navn og tryk enter:");
         String vPlayer2 = scan.nextLine();
 
+        //Hvis spillerne vælger samme navn, så skal spiller 2 vælge et andet navn
         while (vPlayer1.toLowerCase().equals(vPlayer2.toLowerCase())) {
             System.out.println("Begge spillere kan ikke have samme nav. Player 2 vælg nyt navn.");
             vPlayer2 = scan.nextLine();
