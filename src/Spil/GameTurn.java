@@ -63,6 +63,9 @@ public class GameTurn {
                 p.setSixes(0);
                 System.out.println(p.getPlayerName() + " har nu " + p.getPoints() + " points");
             }
+            else {
+                System.out.println(p.getPlayerName() + " har nu " + p.getPoints() + " points");
+            }
         }
 
         //hvis die1 != die2
