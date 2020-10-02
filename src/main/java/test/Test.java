@@ -21,5 +21,11 @@ public class Test {
         System.out.println("\nStørste tal i array: " + Arrays.stream(DiceResult).max().getAsInt());
         System.out.println("Mindste tal i array: " + Arrays.stream(DiceResult).min().getAsInt());
         System.out.println("\n\nTotale sum af alle kast: " + Arrays.stream(DiceResult).sum());
+            System.out.println(i + ": " + die1);
+            DiceResult[i] = die1;
+        }
+        System.out.println("\nStørste tal i array: " + Arrays.stream(DiceResult).max().getAsInt());
+        System.out.println("Mindste tal i array: " + Arrays.stream(DiceResult).min().getAsInt());
+        System.out.println("\n\nTotale sum af alle kast: " + Arrays.stream(DiceResult).sum());
     }
 }
