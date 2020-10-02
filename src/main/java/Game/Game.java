@@ -12,3 +12,4 @@ public class Game {
 }
 //Mias commit til master: "jeg er så god til quotes"
 //Sebastians commit til master: "Small people have the biggest hearts <3"
+//Daniels commit til master: "Nej Gabriel det var slet ikke sådan det skete"
