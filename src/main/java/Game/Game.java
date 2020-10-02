@@ -10,3 +10,4 @@ public class Game {
 
     }
 }
+//Mias commit til master: "jeg er så god til quotes"
